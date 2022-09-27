@@ -7,7 +7,7 @@ let tableauUsers = ['Enzo','Marie','Leia','Luc']
 const btnAdd = document.querySelector('.btn-add');
 
 
-
+// Quand clique sur btn alors créer plusieurs balises et les ajoute. || Créer d'autres TD sur les jours de la semaine
 
 btnAdd.addEventListener('click',() => {
 
@@ -18,7 +18,13 @@ btnAdd.addEventListener('click',() => {
     newLines.appendChild(newTd)
     newTd.appendChild(input)
     
-
+    jours.forEach(j => {
+        let newJour = document.createElement('td')
+        j.innerHTML = toggleCases
+        newLines.appendChild(newJour)
+        newJour.innerHTML = "Télétravail"
+        newJour.classList.add('togglecase')
+    })
     
     
 })

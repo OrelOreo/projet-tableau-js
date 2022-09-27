@@ -4,7 +4,7 @@ const btnReset = document.querySelector('.btn-reset');
 const resetSucces = document.querySelector('p')
 let jours = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi']
 let tableauUsers = ['Enzo','Marie','Leia','Luc']
-btnAdd = document.querySelector('.btn-add');
+const btnAdd = document.querySelector('.btn-add');
 
 
 
@@ -17,12 +17,11 @@ btnAdd.addEventListener('click',() => {
     tBody.appendChild(newLines)
     newLines.appendChild(newTd)
     newTd.appendChild(input)
-
-
     
 
+    
+    
 })
-
 
 
 

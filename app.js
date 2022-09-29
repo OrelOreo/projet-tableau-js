@@ -25,16 +25,31 @@ btnAdd.addEventListener('click',() => {
         j.innerHTML = toggleCases
         newLines.appendChild(newJour)
         newJour.innerHTML = "Télétravail"
+        newJour.classList.add('togglecase')
         newJour.addEventListener('click',(e) => {
             e.target.classList.toggle('active')
+            
           })
-        newJour.classList.add('togglecase')
-
+          
+          newJour = Array.from(document.querySelectorAll('.togglecase'))
+          btnReset.addEventListener('click',() => {
+            for(let i = 0; i < newJour.length; i++){
         
-
+                if(newJour[i].classList.contains('active')){
         
-    })
-    
+                    newJour[i].classList.remove('active')
+                    resetSucces.classList.add('activeParagraphe')
+                    setTimeout(() => {
+                        resetSucces.classList.remove('activeParagraphe')
+                    },5000)
+                }
+        
+            }   
+        })
+          
+
+          
+        })
 })
 
 
@@ -63,6 +78,9 @@ tableauUsers.forEach(user => {
 // Redéclaration du tableau car on a ajouté de nouveaux éléments aux tableau
 toggleCases = Array.from(document.querySelectorAll('.togglecase'));
 
+console.log(toggleCases.length);
+
+
 
 
 // Ajout de la classe active sur chaque element qui ont la classe togglecase
@@ -74,7 +92,7 @@ toggleCases.forEach(togglecase =>{
         for(let i = 0; i < toggleCases.length; i++){
 
             if(toggleCases[i] === e.target ){
-                toggleCases[i].classList.toggle('active')    
+                toggleCases[i].classList.toggle('active')   
                                
             }
         }
@@ -86,7 +104,7 @@ toggleCases.forEach(togglecase =>{
 // Bouton de suppression des éléments qui ont la classe active & ajout d'un paragraphe disant que les éléments ont bien été supp.
 btnReset.addEventListener('click',() => {
     for(let i = 0; i < toggleCases.length; i++){
-
+        
         if(toggleCases[i].classList.contains('active')){
 
             toggleCases[i].classList.remove('active')

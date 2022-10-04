@@ -10,9 +10,13 @@ table{
     height: 200px;
     margin: 0 auto;
 }
-.header-lines th,td:nth-child(1){
+.header-lines :not(:nth-child(1)),td:nth-child(1){
     background-color: #009879;
     color: #ffffff;
+}
+th:nth-child(1){
+    background: grey;
+    color: white;
 }
 th,td:nth-child(1){
     font-size: 20px;
@@ -34,6 +38,9 @@ td:not(:nth-child(1)).active{
     color: #009879;
     font-weight: bold;
     font-size: 14px;
+}
+td input {
+    height: 100%;
 }
 .btn-add{
     display: block;

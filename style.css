@@ -3,15 +3,34 @@
     margin: 0;
     padding: 0;
 }
+body{
+    font-family: 'Genos', sans-serif;
+    height: 100vh;
+    background: #33A1D4;
+    background: -webkit-linear-gradient(top left, #33A1D4, #BD6375);
+    background: -moz-linear-gradient(top left, #33A1D4, #BD6375);
+    background: linear-gradient(to bottom right, #33A1D4, #BD6375);
+    background-repeat: repeat-y;
+}
 
 table{
     border-collapse: collapse;
-    width: 500px;
     height: 200px;
-    margin: 0 auto;
+    margin: 0 auto;    
 }
+tbody button {
+    width: 44px;
+}
+tbody img {
+    width: 20px;
+    height: 20px;
+}
+button img {
+    pointer-events: none;
+}
+
 .header-lines :not(:nth-child(1)),td:nth-child(1){
-    background-color: #009879;
+    background-color: transparent;
     color: #ffffff;
 }
 th:nth-child(1){
@@ -33,28 +52,39 @@ td:not(:nth-child(1)){
 }
 td:not(:nth-child(1)).active{
     opacity: 1;
-    background: rgba(212, 215, 213, 0.687);
-    text-align: center;
-    color: #009879;
+    background: rgba(212, 215, 213, 0.4);
+    color: white;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
+}
+td:last-child{
+    border-radius: 20px;
 }
 td input {
     height: 100%;
+    background: transparent;
+}
+input::placeholder{
+    color: white;
+}
+.btns-container {
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+}
+button {
+    font-weight: bold;
+    font-family: 'Genos', sans-serif;
+    cursor: pointer;
+    margin: 20px auto;
+    padding: 10px;
+    width: 20%;
 }
 .btn-add{
-    display: block;
-    margin: 20px auto;
-    padding: 10px;
-    color: #009879;
-    width: 10%;
+    color:#33A1D4;
 }
-.btn-reset{
-    display: block;
-    margin: 20px auto;
-    padding: 10px;
-    color: red;
-    width: 10%;
+.btn-reset{  
+    color: #BD6375;
 }
 p{
     text-align: center;
